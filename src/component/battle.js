@@ -3,6 +3,7 @@ import PlayerInput from './player.js'
 import PropTypes from 'prop-types'
 import 'bootstrap/dist/css/bootstrap.css'
 import classnames from 'classnames'
+import { Link } from 'react-router-dom';
 
 let PlayerInfo = (props) => {
   return(
@@ -58,6 +59,7 @@ class Battle extends Component {
   }
 
   render(){
+    var match = this.props.match;
     var playerOneName = this.state.playerOneName;
     var playerTwoName = this.state.playerTwoName;
     var playerOneImage = this.state.playerOneImage;
@@ -96,6 +98,15 @@ class Battle extends Component {
           />}
 
         </div>
+        {playerOneImage && playerTwoImage &&
+        <Link
+          className={classnames('button','btn','btn-fight')}
+          to={{
+            pathname: `${match.url}/results`,
+            search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`
+          }}>
+          Battle
+        </Link>}
       </div>
     )
   }

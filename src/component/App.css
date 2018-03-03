@@ -97,6 +97,9 @@ ul{
   margin: 10px auto;
   text-decoration: none;
 }
+.btn-fight{
+  margin-left: 40%;
+}
 .button:hover:enabled{
   background: linear-gradient(#1a1a1a, #0a0a0a);
   color: #fff;
